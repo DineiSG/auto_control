@@ -1,0 +1,20 @@
+.container_principal {
+    background-color: #F0F1F3;
+    display: block;
+    justify-items: normal;
+}
+
+.container_secundario {
+    background-color: #F0F1F3;
+    position:relative;
+    margin-bottom: 2%;
+    
+}
+/* Responsividade para containers */
+@media (max-width: 768px) {
+  .container_principal,
+  .container_secundario {
+    padding: 0 10px;
+    margin: 0;
+  }
+}

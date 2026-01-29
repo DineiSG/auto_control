@@ -1,0 +1,70 @@
+.quantidade {
+    width: 75px;
+    border: solid 1px;
+    height: 28px;
+}
+
+#pagination {
+    font-family: 'Saira';
+    position: relative;
+    color: #bdbdbd;
+}
+
+.dataTable {
+    min-width: 720px;
+    font-family: 'Saira';
+    clear: both;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+    max-width: none !important;
+}
+.table-bordered{
+    border-radius: 2px;
+    border-style: none;
+
+}
+#criterios-pesquisa{
+    width: 100px;
+}
+select.select-item {
+	font-family: 'Saira';
+	border: 1px solid #dbd9d9;
+	border-radius: 2px;
+	height: 35px;
+	width: 210px;
+}
+select.select-item:focus {
+	border-color: #5c8efa;
+}
+
+/* Responsividade para administração */
+@media (max-width: 768px) {
+  .dataTable {
+    min-width: auto;
+    width: 100%;
+    overflow-x: auto;
+    display: block;
+  }
+
+  select.select-item,
+  #criterios-pesquisa,
+  select,
+  input {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    font-size: 14px;
+    padding: 8px 10px;
+    height: auto;
+  }
+
+  .quantidade {
+    width: 60px;
+    height: auto;
+    padding: 4px;
+  }
+
+  #pagination {
+    font-size: 13px;
+  }
+}

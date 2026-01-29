@@ -1,0 +1,105 @@
+/* Fundo escuro atrás do modal 
+.modal_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}*/
+
+/* Caixa principal do modal */
+.icone_alerta {
+    background: #fff;
+    border-radius: 2px;
+    padding: 20px;
+    max-width: 90%;
+    margin-left: 35%;
+}
+
+.modal_conteudo {
+    font-family: 'Saira';
+    background: #fff;
+    border-radius: 2px;
+    padding: 20px;
+    width: 400px;
+    max-width: 90%;
+    box-shadow: 0 1px 3px 0px rgba(0, 0, 0, 0.2);
+    margin-top: 40%;
+    margin-left: 5%;
+    font-size: 15px;
+}
+
+
+
+/* Cabeçalho do modal */
+.modal_cabecalho {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Corpo do modal */
+.modal_corpo {
+    margin: 15px 0;
+
+}
+
+/* Lista de mensagens */
+.lista_mensagens {
+    list-style: none;
+    padding: 0;
+}
+
+.item_mensagem {
+    margin-bottom: 8px;
+    padding: 6px;
+    background: #fff;
+    border-radius: 6px;
+}
+
+/* Rodapé com botão de fechar */
+.modal_rodape {
+    text-align: right;
+}
+
+.btn_fechar_rodape {
+    background: #ff5252;
+    border: none;
+    padding: 8px 14px;
+    color: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+}
+/* Responsividade para modal em celulares e tablets */
+@media (max-width: 768px) {
+  .modal_conteudo {
+    width: calc(100% - 30px);
+    margin: 20px 15px;
+    padding: 16px;
+    font-size: 14px;
+    margin-top: 30%;
+  }
+
+  .icone_alerta {
+    padding: 16px;
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .modal_cabecalho {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .btn_fechar_rodape {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+  }
+}

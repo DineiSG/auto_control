@@ -1,0 +1,96 @@
+#barra_navegacao {
+	background-color: #26ACE2;
+	height: 66px;
+	position: sticky;
+	/*Fixa a barra de navegação no topo*/
+	top: 0;
+	z-index: 1030;
+}
+
+#topnav {
+	box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-brand {
+	margin-left: 3px;
+}
+
+.icon-bg {
+	display: block;
+	border-radius: 50%;
+	height: 40px;
+	width: 40px;
+	padding: 0;
+	line-height: 40px;
+	font-size: 20px;
+	text-align: center;
+	border: none;
+	background-color: #26ACE2;
+	
+
+}
+
+.page-title {
+
+	color: aliceblue;
+	margin-right: 83%;
+	font-size: 18px;
+	font-family: 'Saira', sans-serif;
+	font-weight: normal;
+	padding-top: 5px;
+	width: 500px;
+
+}
+.id-logado{
+	margin-left: 15px;
+	position:absolute;
+	font-size:10px;
+}
+
+#mensagens {
+
+	border-radius: 50%;
+	height: 30px;
+	width: 30px;
+	background-color: #26ACE2;
+	font-size: 17px;
+	text-align: center;
+	border: none;
+	margin-right: 12px;
+}
+
+/* Responsividade para a barra de navegação */
+@media (max-width: 768px) {
+  #barra_navegacao {
+    height: 60px;
+    padding: 0 10px;
+  }
+
+  .page-title {
+    font-size: 16px;
+    margin-right: 10px;
+    width: auto;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 12px;
+  }
+
+  #mensagens {
+    height: 28px;
+    width: 28px;
+    font-size: 16px;
+    margin-right: 10px;
+  }
+
+  .icon-bg {
+    height: 36px;
+    width: 36px;
+    line-height: 36px;
+    font-size: 18px;
+  }
+
+  .id-logado {
+    font-size: 9px;
+    margin-left: 8px;
+  }
+}

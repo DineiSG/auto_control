@@ -1,0 +1,420 @@
+.menu_container {
+    display: flex;
+    position: relative;
+    z-index: 12;
+}
+
+/*Icones: menu, email, e alerta*/
+#botao_menu,
+#icon_message,
+#icon_alert {
+    margin-right: 16px;
+    color: #ffffff;
+    position: relative;
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+#botao_menu:hover {
+    background-color: white;
+    color: #000000;
+}
+
+#icon_message:hover {
+    background-color: white;
+    color: #000000;
+}
+
+#icon_alert:hover {
+    background-color: white;
+    color: #000000;
+}
+
+#li-user {
+    display: block;
+    /* faz ocupar toda a linha */
+    width: 100%;
+    padding: 4px 0px;
+    /* dá espaçamento */
+    text-decoration: none;
+    /* remove sublinhado */
+    color: inherit;
+    /* herda a cor do li */
+}
+
+#user-info-header {
+    text-align: center;
+    font-weight: 600;
+    color: #9e9e9e;
+    text-transform:uppercase;
+}
+
+
+.meus-dados {
+    display: block;
+    text-align: left;
+    color: #7e7d7d;
+    text-decoration: none;
+    padding: 8px 16px;
+    font-size: 13px;
+    line-height: 15px;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.meus-dados:hover {
+    background-color: rgb(43, 41, 41);
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.atividades,
+.avisos {
+    text-decoration: none;
+}
+
+/*Icones do dropdown user*/
+#icones {
+    color: #9e9e9e;
+    font-size: 15px;
+    margin-right: 16px;
+}
+
+/*Dropdown de atividades*/
+#activityDropdown {
+    color: #9e9e9e;
+    font-family: 'Saira';
+    position: fixed !important;
+    top: 62px;
+    right: 80px;
+    min-width: 200px;
+    height: 298px;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 9px 0 rgba(0, 0, 0, 0.24);
+    padding-top: 0px;
+}
+
+#activityDropdown::before {
+    content: "";
+    position: absolute;
+    top: -9px;
+    /* altura da seta */
+    right: 15px;
+    /* posição horizontal da seta */
+    border-width: 0 10px 10px 10px;
+    border-style: solid;
+    border-color: transparent transparent #fff transparent;
+}
+
+/*Dropdown de alertas*/
+#alertDropdown {
+    color: #9e9e9e;
+    font-family: 'Saira';
+    position: fixed !important;
+    top: 62px;
+    right: 150px;
+    min-width: 220px;
+    height: 298px;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 9px 0 rgba(0, 0, 0, 0.24);
+    padding-top: 0px;
+}
+
+#alertDropdown::before {
+    content: "";
+    position: absolute;
+    top: -9px;
+    /* altura da seta */
+    right: 15px;
+    /* posição horizontal da seta */
+    border-width: 0 10px 10px 10px;
+    border-style: solid;
+    border-color: transparent transparent #fff transparent;
+}
+
+/*Estilo do header do dropdown*/
+.notification-header {
+    height: 32px;
+    font-weight: 600;
+    line-height: 32px;
+    padding: 0px 12px;
+    font-size: 12px;
+    color: #9e9e9e;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.notification-header>span:hover {
+    background-color: rgb(255, 255, 255);
+    color: #9e9e9e;
+}
+
+
+/*Estilo do footer do dropdown*/
+.notification-footer {
+    height: 45px;
+    line-height: 20px;
+    font-size: 10px;
+    text-align: center;
+    color: #03a9f4;
+    border-top: 1px solid #eeeeee;
+    padding: 8px 16px;
+    margin-top: 10px;
+
+}
+
+.notification-footer:hover {
+    color: #8BC34A
+}
+
+.notificationSpace {
+    height: 220px;
+    width: 280px;
+    overflow-y: auto;
+    /* cria barra de rolagem vertical */
+    overflow-x: hidden;
+    /* evita rolagem horizontal */
+}
+
+/*Estilo do dropdown user*/
+#userDropdown {
+    color: #9e9e9e;
+    font-family: 'Saira';
+    position: fixed !important;
+    top: 62px;
+    right: 13px;
+    min-width: 223px;
+    height: 298px;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 9px 0 rgba(0, 0, 0, 0.24);
+    padding-top: 0px;
+}
+
+#userDropdown::before {
+    content: "";
+    position: absolute;
+    top: -9px;
+    /* altura da seta */
+    right: 15px;
+    /* posição horizontal da seta */
+    border-width: 0 10px 10px 10px;
+    border-style: solid;
+    border-color: transparent transparent #fff transparent;
+}
+
+/*Estilo do header do dropdown*/
+.topnav-dropdown-header {
+    height: 32px;
+    line-height: 32px;
+    padding: 0px 12px;
+    font-size: 12px;
+    color: #9e9e9e;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.topnav-dropdown-header>span:hover {
+    background-color: rgb(255, 255, 255);
+    color: #9e9e9e;
+}
+
+/*Estilo do footer do dropdown*/
+.user-info-footer {
+    height: 45px;
+    line-height: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #9e9e9e;
+    border-top: 1px solid #eeeeee;
+    padding: 8px 16px;
+    margin-top: 10px;
+}
+
+.user-info-footer:hover {
+    background-color: rgb(43, 41, 41);
+    color: #ffffff;
+}
+
+
+/* Estilo do conteúdo do dropdown*/
+.mensagem_individual {
+    padding: 12px;
+    width: 100%;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.mensagem_individual:hover {
+    background-color: rgb(243, 243, 243);
+    cursor: pointer;
+}
+
+.mensagem-alerta,
+.mensagem-consulta {
+    display: flex;
+    align-items: flex-start;
+    gap: 5px;
+    color: black;
+    text-decoration: none;
+}
+
+.link_pendencias {
+    text-decoration: none;
+    color: black;
+    
+}
+
+.icone-alerta,
+.icone-consulta {
+    font-size: 1.2rem;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+}
+
+.icone-alerta {
+    color: #ff6b00;
+    /* laranja */
+}
+
+.icone-consulta {
+    color: #007bff;
+    /* azul */
+}
+
+.mensagem-texto {
+    flex: 1;
+    font-size: 13px;
+    line-height: 1.4;
+    word-wrap: break-word;
+}
+
+.mensagem-data {
+    display: block;
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 4px;
+}
+
+#icone_alerta {
+    color: #ffff;
+    background-color: #ff6b00;
+    border-radius: 50%;
+    width: 35px;
+    height: 32px;
+    padding-left: 6px;
+}
+
+#icone_consulta {
+    color: #ffff;
+    background-color: #8BC34A;
+    border-radius: 50%;
+    width: 35px;
+    height: 32px;
+    padding-left: 8px;
+    padding-top: 5px;
+    font-size: 15px;
+}
+
+/* Para telas pequenas, o container secundário ocupa toda a largura */
+@media (max-width: 992px) {
+  .menu_container {
+    flex-direction: column;
+  }
+
+  .content-area {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+/* Responsividade para os dropdowns em telas pequenas */
+@media (max-width: 992px) {
+  #activityDropdown,
+  #alertDropdown,
+  #userDropdown {
+    top: 62px;
+    right: 10px;
+    min-width: 250px;
+    max-width: calc(100% - 20px);
+    width: auto;
+    left: 10px;
+    right: auto;
+  }
+
+  #activityDropdown::before,
+  #alertDropdown::before,
+  #userDropdown::before {
+    right: 15px;
+  }
+
+  .notificationSpace {
+    width: 100%;
+    max-height: 200px;
+  }
+
+  .notification-footer {
+    font-size: 12px;
+  }
+
+  .topnav-dropdown-header {
+    font-size: 14px;
+  }
+
+  .meus-dados {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+}
+
+/* Ajustes responsivos para o cabeçalho e dropdowns */
+@media (max-width: 768px) {
+  #botao_menu,
+  #icon_message,
+  #icon_alert {
+    margin-right: 12px;
+    font-size: 20px;
+    padding: 8px;
+  }
+
+  #avisos_consultas,
+  #avisos_pendencias {
+    right: 65px;
+    top: 8px;
+    font-size: 11px;
+  }
+
+  #avisos_pendencias {
+    right: 125px;
+  }
+
+  .meus-dados {
+    font-size: 14px;
+    padding: 12px 20px;
+    white-space: normal;
+  }
+
+  /* Centraliza dropdowns em telas pequenas */
+  #activityDropdown,
+  #alertDropdown,
+  #userDropdown {
+    left: 10px !important;
+    right: auto !important;
+    width: calc(100% - 20px);
+    min-width: auto;
+    top: 60px;
+  }
+
+  .notificationSpace {
+    max-height: 180px;
+  }
+}
