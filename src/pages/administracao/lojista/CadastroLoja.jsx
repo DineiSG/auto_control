@@ -20,6 +20,15 @@ const CadastroLoja = () => {
   const [qtdVeiculos, setQtdVeiculos] = useState('')
   const [cnpj, setCnpj] = useState('')
 
+  // Reseta o formulário
+  const resetForm = () => {
+    setTelefone('')
+    setEmail('')
+    setDescricao('')
+    setQtdVeiculos('')
+    setCnpj('')
+  };
+
 
   // Envia os dados do veículo
   const { createData } = usePostData('/lojas')
@@ -56,6 +65,7 @@ const CadastroLoja = () => {
         await createData(dados)
         //console.log('Veiculo cadastrado com sucesso, ', resultado)
         window.alert('Loja cadastrada com sucesso')
+        resetForm()
         //window.location.reload()
       } catch (err) {
         console.error('Falha ao registrar a loja: ', err)

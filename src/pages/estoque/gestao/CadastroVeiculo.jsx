@@ -36,7 +36,7 @@ const CadastroVeiculo = () => {
     // Busca dados das lojas
     const { data: dadosLoja } = useGetData(`/lojas`)
     // Envia os dados do veículo
-    const { createData } = usePostData('/veiculos')
+    const { loading, createData } = usePostData('/veiculos')
     const { createEstoqueExtra } = usePostData('/pulmao');
 
     // Ordena as lojas por descrição
@@ -252,7 +252,12 @@ const CadastroVeiculo = () => {
                                 value={renavan} onChange={(e) => setRenavan(onlyNumbers(e.target.value))} required />
                         </div>
                         <div className="d-flex flex-row-reverse">
-                            <Button type="submit" variant='primary'>ENVIAR</Button>
+                            <Button type="submit" variant='primary'>
+                                {loading && (
+                                    <div className="spinner-grow spinner-grow-sm flex-row-start" style={{marginRight: '15px'}} role="status" > </div>
+                                )}
+                                ENVIAR
+                            </Button>
                         </div>
                     </Form>
                 </Box>

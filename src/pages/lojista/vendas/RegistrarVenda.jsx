@@ -58,7 +58,7 @@ const RegistrarVenda = () => {
 
   // buscando os dados no bd
   const { data: veiculo, } = useGetData(buscaPlaca ? `/veiculos/placa/${placa}` : null)
-  const { data: dadosPostais } = useGetExtern(cep ? `https://brasilapi.com.br/api/cep/v1/${cep}` : null)
+  const { loading, data: dadosPostais } = useGetExtern(cep ? `https://brasilapi.com.br/api/cep/v1/${cep}` : null)
 
   const { createData } = usePostData('/vendas');
 
@@ -122,7 +122,6 @@ const RegistrarVenda = () => {
       setBuscaPlaca(placaM);
     }
   };
-
 
 
   //Calcula o valor financiado
@@ -430,6 +429,9 @@ const RegistrarVenda = () => {
                 value={observacoes} onChange={(e) => setObservacoes(e.target.value)} required />
             </div>
             <div className="col-6 col-md-12">
+              {loading && (
+                <div className="spinner-grow spinner-grow-sm flex-row-start" style={{ marginRight: '15px' }} role="status" > </div>
+              )}
               <Button onClick={handleSubmit} variant='primary' >ENVIAR</Button>
             </div>
           </Form>

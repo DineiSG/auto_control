@@ -81,9 +81,9 @@ function Body() {
 
   //Definindo o nome de login que será exibido
   let nameLogin;
-  if (letterUser === "M") {
+  if (letterUser === "M" || letterUser === "C" || letterUser === "F") {
     nameLogin = data?.userData?.dados?.empresa;
-  } else if (letterUser === "C") {
+  } else if (letterUser === "U") {
     nameLogin = data?.userData?.dados?.Unidade?.Fantasia;
   } else {
     nameLogin = "Tipo de login não suportado";

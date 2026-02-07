@@ -35,15 +35,15 @@ function Sidebar() {
   const { data } = useGetTest("/auth/session-info") */
 
 
-  // Função para obter as permissões do usuário
-  const getUserPermissions = () => {
-    // Verifica se os dados existem e retorna as permissões
-    // Ajuste o caminho conforme a estrutura real dos dados. Aqui, assumimos que as permissões estão em data.userData.dados.Permissoes
-    return data?.userData?.dados.Permissoes || {};
-  };
-
   // Efeito para atualizar as permissões quando os dados mudarem
   useEffect(() => {
+    // Função para obter as permissões do usuário
+    const getUserPermissions = () => {
+      // Verifica se os dados existem e retorna as permissões
+      // Ajuste o caminho conforme a estrutura real dos dados. Aqui, assumimos que as permissões estão em data.userData.dados.Permissoes
+      return data?.userData?.dados.Permissoes || {};
+    };
+
     if (data) {
       const permissions = getUserPermissions();
       setUserPermissions(permissions);

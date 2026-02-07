@@ -31,8 +31,7 @@ const CadastroVeiculoBIN = () => {
 
     //Buscando os dados na base BIN do Detran
     // A URL da API deve ser ajustada conforme a configuração do backend
-    const { data: veiculo, } = useGetData(buscaPlaca ? `/veiculos/dados?placa=${placa}` : '');
-    console.log('Dados do veículo buscado:', veiculo); // Debug
+    const { loading, data: veiculo, } = useGetData(buscaPlaca ? `/veiculos/dados?placa=${placa}` : '');
 
     const { createData } = usePostData('/veiculos');
     const { createEstoqueExtra } = usePostData('/pulmao');
@@ -45,15 +44,29 @@ const CadastroVeiculoBIN = () => {
 
     // Função para lidar com o evento de blur do campo placa
     // Ela verifica se a placa tem 7 caracteres e se é diferente da última buscada
-    const handleBlur = () => {
+    const handleBlur = async () => {
+        status(true)
         const placaM = placa.toUpperCase();
+        
         if (placaM.length === 7) {
+
+
+            const timeoutId = setTimeout(() => {
+                window.alert(
+                    "BASE BIN offline ou dados do veiculo indisponiveis. Tente novamente ou realize o cadastro de forma manual. "
+                );
+                window.location.reload();
+            }, 120000);
+
+            await new Promise((resolve) => setTimeout(resolve, 1000));
             // Só busca se a placa for diferente da última buscada
             if (placaM !== ultimaPlacaBuscada.current) {
                 console.log('Buscando placa:', placaM); // Debug
                 ultimaPlacaBuscada.current = placaM;
                 setBuscaPlaca(placaM);
             }
+            clearTimeout(timeoutId);
+            loading(false); // Desativa o spinner
         }
     }
 
@@ -264,11 +277,16 @@ const CadastroVeiculoBIN = () => {
                                     <option values='pulmao'>ESTOQUE EXTRA</option>
                                 </select>
                             </div>
-                            <div className="col-12 col-md-3">
+                            <div className="col-12 col-md-2">
                                 <Input label={"Placa:"} type={"text"} maxLength={"7"} style={{ width: '80px' }} nameInput={"placa"}
                                     value={placa} onChange={(e) => setPlaca(e.target.value)} onBlur={handleBlur} required />
                             </div>
-                            <div className="col-12 col-md-3">
+                            {/* Exibe o spinner de carregamento enquanto os dados estão sendo buscados */}
+                            {loading && (
+                                <div className="spinner-border" role="status"></div>
+                            )}
+                            
+                            <div className="col-12 col-md-4">
                                 <Input label={"Marca:"} type={"text"} style={{ width: '150px' }} nameInput={"marca"} value={veiculo.Fabricante} required readOnly />
                             </div>
                             <div className="col-12 col-md-4">
@@ -307,14 +325,11 @@ const CadastroVeiculoBIN = () => {
                                 <Input label={"Renavam:"} type={"text"} style={{ width: '150px' }} nameInput={"renavam"} value={veiculo.renavam} required readOnly />
                             </div>
                             <div className="d-flex flex-row-reverse" >
-                                <Button onClick={handleSubmit} variant='primary' >ENVIAR</Button>
+                                <Button onClick={handleSubmit} variant='primary'>ENVIAR</Button>
                             </div>
-
-
                         </Form>
                     </Box>
                 </div>
-
             </ContainerSecundario>
         </div>
     )
